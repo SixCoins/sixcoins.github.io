@@ -5,29 +5,43 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>第二篇 [ SixCoins ]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第二篇SixCoins</title>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
   
-    <!-- stylesheets list from config.yml -->
-    
-      <link rel="stylesheet" href="/css/theme1.css">
-    
+  <!-- stylesheets list from config.yml -->
+  
+  <link rel="stylesheet" href="/css/theme1.css">
+  
   
 </head>
 <body>
-
-<div id="menu-outer">
-  <div id="menu-inner">
-    
-      <a href="/">Home</a>
-    
-      <a href="/about">About</a>
-    
-      <a href="/contact">Contact</a>
-    
-      <a href="/archives">Archives</a>
-    
+<nav class="navbar navbar-default" role="navigation">
+  <div id="menu-outer" class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-inner">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">第二篇SixCoins</a>
+    </div>
+    <div id="menu-inner" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right text-center">
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/about">About</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+        
+        <li><a href="/archives">Archives</a></li>
+        
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
 
 <div id="content-outer">
   <div id="content-inner">
@@ -56,17 +70,20 @@
 <div id="bottom-outer">
   <div id="bottom-inner">
     Site by SixCoins using
-    <a href="http://hexo.io">hexo blog framework</a>.
+    <a href="http://hexo.io"> hexo blog framework</a>.
     <br>
     <a href="/">Home</a>
   </div>
 </div>
 
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <!-- scripts list from theme config.yml -->
-  
-    <script src="/js/theme1.js"></script>
-  
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/theme1.js"></script>
+
 
 
 </body>
