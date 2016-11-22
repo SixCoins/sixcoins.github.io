@@ -1,0 +1,68 @@
+body {
+  background: url("/back.jpg") no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #e5e5e5;
+}
+#Tbody {
+  padding-top: 49px;
+  background-color: rgba(0,0,0,0.6);
+}
+#menu-inner {
+  padding: 0 10px;
+}
+#menu-nav {
+  background-color: rgba(51,51,51,0.9);
+  border: 0;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #e5e5e5;
+}
+.navbar-default .navbar-brand {
+  color: #e5e5e5;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+  color: #8e8d8d;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #8e8d8d;
+}
+a {
+  color: #ddea4b;
+  cursor: pointer;
+}
+h2 {
+  padding-top: 30px;
+}
+.recent-post-item {
+  padding-left: 40px;
+  padding-top: 30px;
+}
+.recent-post-item>a {
+  font-size: larger;
+}
+#col-9 {
+  padding-left: 60px;
+}
+#recent-posts {
+  font-size: large;
+}
+#pagination {
+  text-align: right;
+}
+#content-outer {
+  padding: 0 12%;
+}
+#bottom-outer {
+  background-color: rgba(51,51,51,0.6);
+  height: 60px;
+  padding-top: 5px;
+}
+#bottom-inner {
+  text-align: left;
+  font-size: small;
+  padding-top: 15px;
+}
