@@ -42,19 +42,22 @@
     </div>
   </div>
 </nav>
-<div id="Tbody">
-  <div id="content-outer">
-    <div id="content-inner">
-      
+<div id="bodyBg"></div>
+  <div id="Tbody">
+    <div id="content-outer">
+      <div id="content-inner">
+        
 <article id="post">
   <h1>Hello World</h1>
   <hr>
-<p>第一次用hexo，还有点不熟悉，主题修改有点没弄明白。<br>第一次用hexo，还有点不熟悉，主题修改有点没弄明白。第一次用hexo，还有点不熟悉，主题修改有点没弄明白。第一次用hexo，还有点不熟悉，主题修改有点没弄明白。</p>
+<p>　　第一个博客搭好了，花了一些时间，走的坑也挺多的，我都把它们写下来总结一下吧，大多数的东西都是网上学到的，我尽量把所有的网址都给贴上。<br>　　首先谈谈hexo的搭建吧。我看过几篇搭建hexo的文章，其中有一篇写的很好，<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">“HEXO+Github,搭建属于自己的博客”</a>。<br>　　首先要有Node环境<br>　　可以从官网下载Node安装，很方便，就是我嫌下载慢，我用的homebrew下载安装，homebrew就相当于Ubuntu下的apt-get，挺好用的，可以了解一下。<br>　　对于git（将本地的内容同步到你的github仓库）mac系统自己就有，所以不用再安装。<br>　　申请github，创建仓库。<br>　　对名字有要求，用户名+github.io,像我的（账户名是sixcoins）就是：sixcoins.github.io。<br>　　本地安装hexo。<br>　　$ npm install -g hexo<br>　　我安装的时候没有需要提升权限，如果权限不够，加上sudo，应该就可以了。对于npm，国内有点不稳定，有时候速度快，有时候一点速度都没有，不想折腾，那就只需要等久可以了，我等过，安装完成的时候，都高兴死了。后来实在等不下去了，就换了淘宝的源。<a href="http://www.jianshu.com/p/0deb70e6f395" target="_blank" rel="external">“npm换源”</a>。如果你在学校，就找找学校有没有镜像源。有的话特别快。<br>　　hexo安装好了，就开始初始化本地仓库。<br>　　创建一个文件夹，取名blog，cd进入blog,然后执行hexo init。<br>　　取名没有特别的含义，就是为了让你记住它是干什么用的。取名Blog,一眼就知道，这个是“博客”。<br>　　初始化的时候，可能会有一些警告，提示什么什么版本低的，可以不用管，不影响使用。<br>　　初始化完成后，你就可以开始自己的博客之路了。在blog目录source文件夹里，有个.md文件中编写自己的文章，【添加文章可以用hexo new “postName”命令来添加postName就是生产文章的名字】。<a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">“mackdown文件语法”</a>【我写的时候发现语法，最好是按照hexo初始化好后，提供的那篇helloworld文章语法，自己不小心删掉过，郁闷了好一会儿】<br>　　写好后’hexo g‘（就是命令’hexo generate‘的缩写）生产静态文件，’hexo s‘(’hexo server‘的缩写)本地运行，进入<a href="http://localhost:4000" target="_blank" rel="external">’http://localhost:4000‘</a>,就可以看到自己写的东西。<br>　　命令’hexo cl’（’hexo clean’的缩写）用于删除’hexo g‘生成的静态文件。你’hexo g‘就可以看到blog文件夹下出现public文件夹，你’hexo cl‘就发现它不见了。那些静态文件都在public里边。【命令都得在blog文件夹中执行】<br>　　说一下blog中的文件。<br>　　‘public’就是生成的静态文件。<br>　　‘scaffolds’是新建文章的模板文件，默认是post【意思是用命令新建的文章，样子就是post.md中的样子】。<br>　　‘source’文章目录所在，写好的文章就放在这里面。<br>　　’themes‘主题模板，网上有很多很好看的主题模板，下载放到这里边就可以了，但是还是用不了，还得配置才行。<br>　　最终要的文件—‘_config.yml’。一般，都看的懂，像‘language：’这样的，都知道是什么意思【但是知道，并不知道该填什么，这是最着急的，我把我知道的都写下来】，它们的填法大多和自己想像的差不多，像‘language：’是中文网站就填‘zh-CN’,就和前端一样了。<br>　　要切换主题，就找到‘theme：landscape’我这个版本默认的是landscape，要切换的话就吧landscape换成themes目录中你要切换的主题名字。<br>　　最关键的是 # Deployment 这块的东西，有这个才能上传到你的github。以我的sixcoins为例。<br>　deploy:<br>　　type: git<br>　　repository: <span>https://</span>github.com/ SixCoins/ sixcoins.github.io.git<br>　　branch: master<br>　　上边提到的，简书那篇文章，就有说明为什么这样配置。【那串网站，就是github网址加上你的github名字，再加厂库名，最后添上.git】<br>　　填写配置文件的时候千万注意 “：”后面要跟上一个空格。不然有大坑给你跳<br>　　这样基本配置完了，这样配置个，每次上传的时候都会有一个登陆过程，有点麻烦。要将自己电脑的公钥告诉github，网上写的都是一样的，随便找一篇都可以搭建好。<br>　　生成静态文件后，执行 hexo d【hexo deploy的缩写】上传到github。浏览“‘你的github名字’+.github.io”就能看到你在本机运行的样子。<br>　　如果你想用其他域名，在你的github那个仓库中，添加一个名为CNAME文件，在里边填写你的域名。弄好后，在域名运营商那边，将域名解析到你的.github.io网站，隔一会儿就可以通过你的域名访问，github.io页面。</p>
 
 </article>
 
 
 <nav id="pagination">
+  
+    <a href="/2016/11/23/hexo-theme/" class="prev">&larr; Prev</a>
   
 
   
@@ -63,28 +66,25 @@
 </nav>
 
 
+      </div>
     </div>
+    <div id="bottom-outer" class="navbar-fixed-bottom">
+      <div id="bottom-inner">
+        <img id="bottom-img" src="/img.png" alt="img" class="img-responsive img-circle">
+        <p id="bottom-p">Site by SixCoins using<a href="http://hexo.io"> hexo blog framework</a></p>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+    <!-- scripts list from theme config.yml -->
+    
+    <script src="/js/theme1.js"></script>
+    
+    
+
   </div>
-
-  <div id="bottom-outer">
-    <div class="col-sm-4" id="bottom-img">
-      <img src="/img.png" alt="img" class="img-responsive img-circle">
-    </div>
-    <div class="col-sm-8" id="bottom-inner">
-      Site by SixCoins using
-      <a href="http://hexo.io"> hexo blog framework</a>
-    </div>
-  </div>
-
-  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  
-  <!-- scripts list from theme config.yml -->
-  
-  <script src="/js/theme1.js"></script>
-  
-  
-</div>
 </body>
 </html>
