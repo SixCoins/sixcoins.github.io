@@ -1,0 +1,63 @@
+/*分类,标签,归档页*/
+#category h1, #tag h1, #archive2 h1 {
+    height: 60px;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-left: 30px;
+    padding-top: 12px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #bbbbbb, white);
+    font-size: 25px;
+    animation: 700ms category-h1 forwards;
+}
+
+.category-item, .tag-item, .archive-item {
+    text-align: center;
+    margin: 10px 60px 0 50px;
+}
+
+.category-item:hover a, .tag-item:hover a, .archive-item:hover a {
+    background-color: #9B59B6;
+    color: white;
+    border-radius: 5px;
+}
+
+.category-item a, .tag-item a, .archive-item a {
+    display: block;
+    padding: 10px 0 12px 0;
+    font-size: 20px;
+    z-index: 0;
+}
+
+.category-item-div, .tag-item-div, .archive-item-div {
+    height: 0;
+}
+
+.category-item time, .tag-item time, .archive-item time {
+    position: relative;
+    top: -18px;
+    z-index: -1;
+    font-size: 10px;
+}
+
+@keyframes category-h1 {
+    0% {
+        padding-left: 80px;
+    }
+    100% {
+        padding-left: 30px;
+    }
+}
+/*文章*/
+#post{
+    margin: 20px 50px;
+}
+#post h1{
+    padding: 20px 10px;
+    font-size: 35px;
+}
+#post p{
+    padding: 10px 20px;
+    line-height: 40px;
+}
