@@ -1,0 +1,393 @@
+html body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: #5ba2ee;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1354ff;
+}
+
+#menu-outer {
+    /*菜单栏*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background-color: #d9d9d9;
+    z-index: 999;
+}
+
+#menu-inner {
+    /*菜单栏选项*/
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#menu-img {
+    /*头像*/
+    width: 59px;
+    height: 59px;
+    border-radius: 35px;
+    padding: 3px;
+    border: 1px solid #a5a5a5;
+}
+
+#menu-inner-img {
+    /*头像框*/
+    padding: 150px 42px 0 42px;
+}
+
+#menu-button-def {
+    /*归档时要隐藏的按钮*/
+    overflow: auto;
+}
+
+#menu-button-add {
+    /*添加的菜单按钮*/
+    margin: 0 6px;
+    border-top: 2px solid #a5a5a5;
+}
+
+#btn-home {
+    /*返回按钮*/
+    display: block;
+    transition: all .3s ease-out;
+    overflow: hidden;
+    height: 0;
+}
+
+.menu-button-add-bg {
+    /*点击归档菜单后*/
+    overflow: hidden;
+    height: 0;
+}
+
+.button-menu {
+    /*菜单中的按钮*/
+    display: block;
+    text-align: center;
+    margin: 5px 38px;
+    font-size: 15px;
+    transition: all .3s ease-out;
+}
+
+.button-menu:hover {
+    margin: 5px 10px;
+    background-color: #a7acb8;
+    border-radius: 10px;
+    color: #d9d9d9;
+}
+
+#list-inner {
+    /*列示*/
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    text-align: center;
+}
+
+.list-p {
+    /*list中的p【标题】*/
+    text-align: left;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.category-list, .tag-list, .archive-list, .recent-list {
+    /*ul*/
+    margin: 0;
+    padding: 0;
+}
+
+.category-list-item, .tag-list-item, .archive-list-item, .recent-list-item {
+    /*去li的点*/
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.recent-list-item {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #a5a5a5;
+}
+
+#bottom-inner {
+    /*说明*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: small;
+    width: 100%;
+    color: #d9d9d9;
+    background-color: #888c98;
+}
+
+#content-outer {
+    /*内容外框*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 150px;
+    overflow: auto;
+}
+
+#content-inner {
+    /*内容内框*/
+    position: relative;
+    margin: 0 70px;
+    text-align: justify;
+    font-size: 16px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.content-P {
+    /*文章题目*/
+    padding: 2px 10px;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: bolder;
+    background: linear-gradient(to right, #d9d9d9, #FFF);
+    border-radius: 7px;
+}
+
+.content-div {
+    /*文章内容*/
+    padding: 20px 0;
+    /*行高*/
+    line-height: 170%;
+    /*字间距*/
+    letter-spacing: 1px;
+}
+
+/*可设置文章显示的样式，如code、ul等*/
+.content-div li {
+    list-style-type: none;
+    padding-bottom: 20px;
+}
+.content-div ul{
+    margin: 0;
+    padding-left: 0;
+}
+.content-div ol{
+    margin: 0;
+    padding-left: 80px;
+}
+/*设置文章显示结束位置*/
+/*------分割线------*/
+.item-a {
+    /*所有标题*/
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.category-item, .tag-item, .archive-item {
+    /*分类页,标签页，归档页显示文章标题*/
+    padding-top: 20px;
+    text-align: center;
+}
+
+#pagination1 {
+    /*页面分页*/
+    position: absolute;
+    bottom: 60px;
+    margin: 0 15%;
+    padding: 2px 0;
+    width: 70%;
+    text-align: center;
+    background-color: #d9d9d9;
+    border-radius: 7px;
+}
+
+.page-number {
+    /*分页号码*/
+    display: inline-block;
+    padding: 0 20px;
+    width: 40px;
+    text-align: center;
+}
+
+.prev {
+    /*前一页按钮*/
+    position: absolute;
+    left: 30px;
+}
+
+.next {
+    /*后一页*/
+    position: absolute;
+    right: 30px;
+}
+
+#pagination2 {
+    /*文章分页*/
+    position: fixed;
+    bottom: 20px;
+    left: 128px;
+    width: 44px;
+    height: 44px;
+}
+
+#pagination2:hover #prev2-outer {
+    transform: rotate(0deg);
+}
+
+#pagination2:hover #next2-outer {
+    transform: rotate(0deg);
+}
+
+#pagination2:hover #pg-menu-ii {
+    opacity: 0;
+}
+
+#pagination2:hover #pg-menu-i {
+    width: 20px;
+    transform-origin: left center;
+    transform: rotate(228deg) translate(-22px, 1px);
+}
+
+#pagination2:hover #pg-menu-iii {
+    width: 20px;
+    transform-origin: left center;
+    transform: rotate(-228deg) translate(-22px, -1px);
+}
+
+#pg-menu {
+    /*前后页按钮*/
+    background-color: #bcbdbd;
+    background-clip: content-box;
+    padding: 1px;
+    border: 1px solid #bcbdbd;
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#pg-menu-inner {
+    /*前后页按钮内*/
+    padding: 10px 0;
+    margin-left: 20px;
+}
+
+#pg-menu-i {
+    /*按钮上的图标1*/
+    width: 10px;
+    height: 4px;
+    background-color: #454854;
+    transition: all .3s ease-out;
+}
+
+#pg-menu-ii {
+    /*按钮上的图标2*/
+    width: 16px;
+    height: 4px;
+    margin: 4px 0;
+    background-color: #454854;
+    transition: all .3s ease-out;
+}
+
+#pg-menu-iii {
+    /*按钮上的图标3*/
+    width: 10px;
+    height: 4px;
+    background-color: #454854;
+    transition: all .3s ease-out;
+}
+
+#prev2-outer {
+    position: fixed;
+    bottom: 42px;
+    left: 150px;
+    height: 40px;
+    width: 40px;
+    margin-bottom: 1px;
+    z-index: -1;
+    overflow: hidden;
+    transform-origin: left bottom;
+    transform: rotate(-90deg);
+    transition: all .3s ease-out;
+}
+
+#next2-outer {
+    position: fixed;
+    bottom: 2px;
+    left: 150px;
+    height: 40px;
+    width: 40px;
+    margin-top: 1px;
+    z-index: -1;
+    overflow: hidden;
+    transform-origin: left top;
+    transform: rotate(90deg);
+    transition: all .3s ease-out;
+}
+
+.prev2 {
+    /*前一页*/
+    position: absolute;
+    left: -40px;
+    display: inline-block;
+    background-color: #595a5c;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#prev2-span {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    font-size: 13px;
+    color: #bcbdbd;
+}
+
+.next2 {
+    /*后一页*/
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    font-size: 14px;
+    display: inline-block;
+    background-color: #595a5c;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#next2-span {
+    position: absolute;
+    bottom: 11px;
+    right: 11px;
+    font-size: 13px;
+    color: #bcbdbd;
+}
+
+@media only screen and (max-width: 820px) {
+
+}
