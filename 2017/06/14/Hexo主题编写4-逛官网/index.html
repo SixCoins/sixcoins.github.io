@@ -4,7 +4,7 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to sixcoins&#39; blog [ SixCoins ]</title>
+    <title>Hexo主题编写4--逛官网 [ SixCoins ]</title>
     
     <!-- stylesheets list from config.yml -->
     
@@ -88,11 +88,20 @@
 <div id="content-outer">
     <div id="content-inner">
         <article id="post">
-    <p class="content-P">Welcome to sixcoins&#39; blog</p>
+    <p class="content-P">Hexo主题编写4--逛官网</p>
     <div class="content-div">
         <ul>
-<li>博客导航【“归档”菜单内，有所有文章分类。】</li>
-<li>“Hexo主题”：从头编写Hexo主题【那些问题，都是我在琢磨hexo时遇到的问题】</li>
+<li>&emsp;&emsp;hexo官网是有中文版，所有很多问题可以从官网解决；</li>
+<li>&emsp;&emsp;比如，你想将archive显示的英文改为中文，就可以从官网找到：list_archives([options]）辅助函数，以及option的详细参数类型。</li>
+<li>&emsp;&emsp;然后，根据transform函数参数，修改显示的形式。</li>
+<li>&emsp;&emsp;但是官网没有给出transform函数的例子，这时候，就可以去hexo源码中查找。</li>
+</ul>
+<ol>
+<li>&emsp;&emsp;在模块文件夹里，找到hexo文件夹，list_archives是个辅助函数，所有查找与help有关联的文件，最后你会找到：hexo-&gt;plugins-&gt;helper-&gt;list_archives.js</li>
+</ol>
+<ul>
+<li>&emsp;&emsp;打开list_archive.js文件，找到用于接受transform函数的变量：transform变量，查找与这个变量有关的代码，会在最后显示部分，发现有个判断（是否存在transform函数），这个transform（item.name）是将时间（英文版）传回自定义的transform函数。</li>
+<li>&emsp;&emsp;这样我们就能在前端，对这个显示做处理。【如果觉得处理起来比较麻烦，你可以直接对，这个name做处理，直接将这个name，在赋值的时候，就将name赋值为汉字类型的，（原赋值语句：var name = date.format(format)），format也是一个list_archive函数的参数。】</li>
 </ul>
 
     </div>
@@ -108,12 +117,12 @@
         </div>
     </div>
     
-    <div id="prev2-outer">
-        <a href="/2017/06/14/Hexo主题编写1--入门/" class="prev2">
-            <span id="prev2-span">前</span>
+    
+    <div id="next2-outer">
+        <a href="/2017/06/14/Hexo主题编写3-问题2-archive生成问题/" class="next2">
+            <span id="next2-span">后</span>
         </a>
     </div>
-    
     
 </nav>
 

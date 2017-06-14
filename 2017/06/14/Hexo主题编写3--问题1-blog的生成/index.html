@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Hexo主题编写3--问题1-blog的生成 [ SixCoins ]</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/six5.css">
+    
+    
+</head>
+<body>
+
+<div id="menu-outer">
+    <div id="menu-inner">
+        <div id="menu-inner-img"><img id="menu-img" src="/img.jpg" alt="头像"></div>
+        <div id="menu-button-def">
+            
+            <a class="button-menu" href="/">主页</a>
+            
+            <a class="button-menu" href="/about">个人详情</a>
+            
+        </div>
+        <div id="menu-button-add">
+            <a id="btn-home">返回</a>
+            <a class="button-menu" id="btn-RCTA">归档</a>
+        </div>
+    </div>
+    <div id="list-inner">
+        
+<p class="list-p">分类</p>
+
+<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo主题/">Hexo主题</a></li></ul>
+
+<p class="list-p">标签</p>
+
+<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+<p class="list-p">归档</p>
+
+<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">6月 2017</a></li></ul>
+
+
+<p class="list-p">最近文章</p>
+<ul class="recent-list">
+    
+    
+    <li class="recent-list-item">
+        <a href="/2017/06/14/Hexo主题编写4-逛官网/">Hexo主题编写4--逛官网</a>
+    </li>
+    
+    
+    
+    <li class="recent-list-item">
+        <a href="/2017/06/14/Hexo主题编写3-问题2-archive生成问题/">Hexo主题编写3--问题2-archive生成问题</a>
+    </li>
+    
+    
+    
+    <li class="recent-list-item">
+        <a href="/2017/06/14/Hexo主题编写3--问题1-blog的生成/">Hexo主题编写3--问题1-blog的生成</a>
+    </li>
+    
+    
+    
+    <li class="recent-list-item">
+        <a href="/2017/06/14/Hexo主题编写2--主题的基本结构/">Hexo主题编写2--主题的基本结构</a>
+    </li>
+    
+    
+    
+    <li class="recent-list-item">
+        <a href="/2017/06/14/Hexo主题编写1--入门/">Hexo主题编写1--入门</a>
+    </li>
+    
+    
+</ul>
+
+    </div>
+    <div id="bottom-inner">
+        SixCoins ||By <a href="http://hexo.io">hexo</a>.
+    </div>
+</div>
+
+<div id="content-outer">
+    <div id="content-inner">
+        <article id="post">
+    <p class="content-P">Hexo主题编写3--问题1-blog的生成</p>
+    <div class="content-div">
+        <ul>
+<li>&emsp;&emsp;当你编写到一半的时候，你会发现的问题：</li>
+</ul>
+<ol>
+<li>&emsp;&emsp;为什么hexo通过&lt;%-body%&gt;参数可以生成主页、归档页面，为什么我想自己写一个独立的页面，像about页面，却不能添加到&lt;%-body%&gt;参数中。</li>
+<li>&emsp;&emsp;yo生产的页面，是自带about和contact菜单的，但是无论，你在主题里，添加文件，这里个菜单总是不能用。原因是，hexo更本没有生成这两个菜单的模块。</li>
+<li>有了这个问题，接下来就是折腾的时候了。</li>
+<li>&emsp;&emsp;首先，能确定的是这个页面生产是由hexo控制的，而不是主题。</li>
+<li>&emsp;&emsp;其次，得理解hexo的原理：hexo只是一个本地转化的工具，将本地的资源集合起来，转化成静态文件【html，css之类的，以文件夹的形式进行分层】，然后将这些文件，交给github管理。</li>
+<li>&emsp;&emsp;然后就可以入手了，记得自己当时，从hexo站点配置开始找，把模块文件夹翻了个遍，找是找到了，就是有点浪费时间。</li>
+<li>&emsp;&emsp;后来发现很简单，一眼就能看出为什么。</li>
+<li>&emsp;&emsp;hexo本地运行，是生成了那些文件的，就像你hexo -g生成本地博客文件。-g是什么:generator,根据经验来看，一定与generator有关，而且那个文件的名字中也一定会有generator的字眼。</li>
+<li>&emsp;&emsp;看来模块文件夹后，你会发现确实有这样的文件：</li>
+<li>&emsp;&emsp;hexo-generator-archive</li>
+<li>&emsp;&emsp;hexo-generator-index</li>
+<li>&emsp;&emsp;……</li>
+<li>&emsp;&emsp;是不是眼前一亮，是的，这确实是，hexo用来生产archive和index页面的模块。</li>
+<li>&emsp;&emsp;但是，是不是有些地方被跳过了，是的，这些模块为什么，就被hexo使用了。安装hexo的时候，会忽略一个东西，就是博客目录下的那个json文件：package.json。</li>
+<li>&emsp;&emsp;点开就会知道，自己浪费时间了，这说明了，养成一个好习惯的重要性！</li>
+<li>&emsp;&emsp;这个文件里，详细的写了，这个博客用到了哪些模块。同时也可以看到，自己使用的模块版本。</li>
+</ol>
+<ul>
+<li>&emsp;&emsp;找到了自己要的文件，接下来就看自己的了，可以动手试试为自己写一个模块。【需要用到nodejs知识，但是熟悉JavaScript的话，问题应该不大。】</li>
+<li>当然使用hexo new page “about”另说了。</li>
+</ul>
+
+    </div>
+</article>
+
+
+<nav id="pagination2">
+    <div id="pg-menu">
+        <div id="pg-menu-inner">
+            <div id="pg-menu-i"></div>
+            <div id="pg-menu-ii"></div>
+            <div id="pg-menu-iii"></div>
+        </div>
+    </div>
+    
+    <div id="prev2-outer">
+        <a href="/2017/06/14/Hexo主题编写3-问题2-archive生成问题/" class="prev2">
+            <span id="prev2-span">前</span>
+        </a>
+    </div>
+    
+    
+    <div id="next2-outer">
+        <a href="/2017/06/14/Hexo主题编写2--主题的基本结构/" class="next2">
+            <span id="next2-span">后</span>
+        </a>
+    </div>
+    
+</nav>
+
+
+    </div>
+</div>
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/six5.js"></script>
+
+
+
+</body>
+</html>
