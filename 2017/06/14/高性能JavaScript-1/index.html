@@ -4,7 +4,7 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Hexo主题编写2--主题的基本结构 [ SixCoins ]</title>
+    <title>高性能JavaScript-1 [ SixCoins ]</title>
     
     <!-- stylesheets list from config.yml -->
     
@@ -88,35 +88,9 @@
 <div id="content-outer">
     <div id="content-inner">
         <article id="post">
-    <p class="content-P">Hexo主题编写2--主题的基本结构</p>
+    <p class="content-P">高性能JavaScript-1</p>
     <div class="content-div">
-        <ul>
-<li>&emsp;&emsp;首先讲一下，用yo生成的主题基本文件：</li>
-</ul>
-<ol>
-<li>&emsp;&emsp;    _config.yml 用于配置网站基本信息</li>
-<li>&emsp;&emsp;    layout文件夹 存放的是模板引擎</li>
-<li>&emsp;&emsp;    source文件夹 存放css,js,图片等资源。</li>
-</ol>
-<ul>
-<li>&emsp;&emsp;layout文件下：【以ejs模板为列】</li>
-</ul>
-<ol>
-<li>最基本的文件：</li>
-<li>&emsp;&emsp;    archive.ejs        归档页【按照时间，将所有文章分类】</li>
-<li>&emsp;&emsp;    category.ejs    分类页【按照文章中的category值分类】</li>
-<li>&emsp;&emsp;    tag.ejs            便签页【按照文章中的tag值分类】</li>
-<li>&emsp;&emsp;    post.ejs        文章详情页【显示文章题目和内容】</li>
-<li>&emsp;&emsp;    page.ejs        页面详情页【看一下代码，就会发现它和post.ejs一样】</li>
-<li>&emsp;&emsp;    partials文件夹    里边存了：pagination.ejs和recent-posts.ejs和命名的意思，指分页和最近的文章。  </li>
-<li>&emsp;&emsp;【partials存放的都是‘部件’，比如你想为自己的博客添加一个天气提醒的模块，可以放在这里，这样看起来比较规范。在别的页面直接引用这个模块，就可以省去很多代码。但是不能把，原本的文件放到这里吧，如tag.ejs,如果特别想把他们丢进去，就用模块引用，注意：yo生成的文件不能改变（其实也可以改变，目前先不动它们）。】</li>
-<li>接下来就是博客的身体文件了：layout.ejs和index.ejs</li>
-<li>&emsp;&emsp; layou.ejs        一看代码，就会知道，这个是网站的主体，网站构成的必要的东西都在这里</li>
-<li>&emsp;&emsp; index.ejs         就是主页，打开博客第一个填充layout中的&lt;%-body%&gt;参数的页面。</li>
-</ol>
-<ul>
-<li>&emsp;&emsp; 其实可以通过浏览器查看，当前浏览页面的源码，查看标签的id和class，然后去主题中找到对应的id或者class，就知道当前页面是哪个部分填充的layout中的&lt;%-body%&gt;参数。</li>
-</ul>
+        <p>&emsp;&emsp;</p>
 
     </div>
 </article>
@@ -131,15 +105,9 @@
         </div>
     </div>
     
-    <div id="prev2-outer">
-        <a href="/2017/06/14/Hexo主题编写3--问题1-blog的生成/" class="prev2">
-            <span id="prev2-span">前</span>
-        </a>
-    </div>
-    
     
     <div id="next2-outer">
-        <a href="/2017/06/14/Hexo主题编写1--入门/" class="next2">
+        <a href="/2017/06/14/Hexo主题编写4-逛官网/" class="next2">
             <span id="next2-span">后</span>
         </a>
     </div>
