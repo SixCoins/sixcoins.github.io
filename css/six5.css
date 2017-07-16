@@ -171,7 +171,7 @@ a:hover {
     box-sizing: border-box;
     font-size: 30px;
     font-weight: bolder;
-    background: linear-gradient(to right, #d9d9d9, #FFF);
+    background: linear-gradient(to right, #f7f7f7, #FFF);
     border-radius: 7px;
 }
 
@@ -418,21 +418,32 @@ a:hover {
 #about-STU {
     /*学习经历*/
 }
-.head2{
+
+.head2 {
     /*学习经历*/
     font-size: 20px;
 }
-.head2-1{
+
+.head2-1 {
     padding-left: 32px;
     margin-bottom: 5px;
 }
-.STU-body{
+
+.STU-body {
     /*详情2*/
     padding-left: 64px;
     padding-bottom: 20px;
     line-height: 170%;
 }
-/*手机端*/
-@media only screen and (max-width: 820px) {
 
+/*手机端*/
+@media only screen and (max-width: 980px) {
+    /*菜单栏*/
+    #menu-outer{
+        width: 0;
+    }
+    /*内容*/
+    #content-outer{
+        padding: 0;
+    }
 }
