@@ -392,58 +392,310 @@ a:hover {
 }
 
 /*个人详情页面*/
-#about {
+.about {
+    width: 595px;
+    height: 100%;
+    background: #eee;
+    margin: 0 auto;
+    max-height: 842px;
+    min-height: 713px;
+    border-radius: 15px;
     position: relative;
 }
 
-#about-contact {
-    /*联系信息*/
+.about-contact {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.head1 {
-    /*姓名*/
-    padding-left: 50px;
-    padding-top: 25px;
-    margin-bottom: 100px;
+.about-header {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.Contact-body {
-    /*详情1*/
+.about-header-name {
     position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 14px;
+    top: calc(50% - 35px);
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
 }
 
-#about-STU {
-    /*学习经历*/
+.about-header-time {
+    position: absolute;
+    top: calc(50% + 7px);
+    width: 100%;
+    font-size: 19px;
+    font-weight: bolder;
+    text-align: center;
 }
 
-.head2 {
-    /*学习经历*/
-    font-size: 20px;
+.about-header-info {
+    position: absolute;
+    top: 52px;
+    right: 65px;
+    font-size: small;
+    opacity: 0;
 }
 
-.head2-1 {
-    padding-left: 32px;
-    margin-bottom: 5px;
+.about-body {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 60px;
+    height: calc(100% - 200px);
+    opacity: 0;
+    overflow: auto;
 }
 
-.STU-body {
-    /*详情2*/
-    padding-left: 64px;
-    padding-bottom: 20px;
-    line-height: 170%;
+.about-body-span {
+    width: 100%;
+    background: #bdddf9;
+    display: block;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 12px;
 }
 
+.about-body-span-all {
+    list-style: none;
+    padding-left: 40px;
+    margin: 16px 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.about-body-div {
+    margin-bottom: 70px;
+}
+
+.about-body2 {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 26px;
+    background: rgba(25, 93, 234, 0.23);
+    margin: 0 calc(50% - 42px);
+    width: 84px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0;
+}
+
+.about-body2-left{
+    position: absolute;
+    top: 18px;
+    left: 13px;
+    background: #fff;
+    height: 4px;
+    width: 33px;
+    transform: rotate(-24deg);
+    transform-origin: 0 100%;
+}
+.about-body2-right{
+    position: absolute;
+    top: 18px;
+    right: 13px;
+    background: #fff;
+    height: 4px;
+    width: 33px;
+    transform: rotate(24deg);
+    transform-origin: 100% 100%;
+}
+.about-body2-evaluation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #eee;
+    transition: all 1s ease-in-out;
+    box-sizing: border-box;
+    padding: 0 43px;
+    text-indent: 25px;
+    overflow: hidden;
+}
+.about-body3{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 26px;
+    background: rgba(25, 93, 234, 0.23);
+    margin: 0 calc(50% - 42px);
+    width: 84px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.about-body3-left{
+    position: absolute;
+    top: 5px;
+    left: 13px;
+    background: #fff;
+    height: 4px;
+    width: 33px;
+    transform: rotate(24deg);
+    transform-origin: 0 0;
+}
+.about-body3-right{
+    position: absolute;
+    top: 5px;
+    right: 13px;
+    background: #fff;
+    height: 4px;
+    width: 33px;
+    transform: rotate(-24deg);
+    transform-origin: 100% 0;
+}
+/*name动画*/
+.animate-about-header-name {
+    animation: animation-about-header-name 3s ease-in-out .8s forwards;
+}
+
+.animate-about-header-time {
+    animation: animation-about-header-time 3s ease-in-out .8s forwards;
+}
+
+.animate-about-header-info {
+    animation: animation-about-header-info 3s ease-in-out .8s forwards;
+}
+
+.animate-about-header {
+    animation: animation-about-header 3s ease-in-out .8s forwards;
+}
+
+.animate-about-body {
+    animation: animation-about-body 3s ease-in-out .8s forwards;
+}
+.animate-about-body2 {
+    animation: animation-about-body2 3s ease-in-out .8s forwards;
+}
+.animate-about-body2-evaluation{
+    height: calc(100% - 200px);
+
+}
+@keyframes animation-about-header-name {
+    0% {
+        opacity: 1;
+        top: calc(50% - 35px);
+        width: 100%;
+    }
+    10% {
+        opacity: 0;
+        top: calc(50% - 45px);
+        width: 100%;
+        display: none;
+    }
+    20% {
+        opacity: 0;
+        top: 75px;
+        width: 50%;
+    }
+    30% {
+        opacity: 1;
+        top: 75px;
+        width: 50%;
+
+    }
+    100% {
+        opacity: 1;
+        top: 75px;
+        width: 50%;
+    }
+}
+
+@keyframes animation-about-header-time {
+    0% {
+        opacity: 1;
+        top: calc(50% + 7px);
+    }
+    10% {
+        opacity: 0;
+        top: calc(50% + 17px);
+    }
+    100% {
+        opacity: 0;
+        top: calc(50% + 17px);
+        z-index: -999;
+    }
+}
+
+/*慢8%*/
+@keyframes animation-about-header-info {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animation-about-header {
+    0% {
+        height: 100%;
+    }
+    10% {
+        height: 100%;
+    }
+    20% {
+        height: 200px;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+@keyframes animation-about-body {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-about-body2 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 /*手机端*/
 @media only screen and (max-width: 980px) {
     /*菜单栏*/
-    #menu-outer{
+    #menu-outer {
         width: 0;
     }
+
     /*内容*/
-    #content-outer{
+    #content-outer {
         padding: 0;
+    }
+
+    #bottom-inner {
+        overflow: hidden;
     }
 }
