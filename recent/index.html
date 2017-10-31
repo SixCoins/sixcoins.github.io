@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title> [ SixCoins ]</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/six6.css">
+    
+    
+</head>
+<body>
+<div class="back-img"></div>
+<div class="recent">
+    
+    <p class="page-title">最近文章</p>
+    <a class="button-home" href="/"></a>
+    <ul class="recent-list">
+        
+        
+        <li class="recent-list-item">
+            <p class="recent-post">个人所得</p>
+            <time datetime="2017-10-30T16:00:00.000Z">
+                2017-10-31
+            </time>
+            <div class="recent-postContent">
+                <ul>
+<li></li>
+</ul>
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="recent-list-item">
+            <p class="recent-post">Hexo主题4-hexo官网</p>
+            <time datetime="2017-06-14T11:08:27.000Z">
+                2017-06-14
+            </time>
+            <div class="recent-postContent">
+                <ul>
+<li>hexo官方文档有中文版，不懂的地方可以很快的找到自己想知道的。</li>
+<li><blockquote>
+<p>比如时间归档显示的是英文，但是你想修改为中文。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>就可以从官方找到list_archives([options]）辅助函数。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>但是官方没有给出具体的例子，所有还是得自己动手。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>找到hexo源码，翻出辅助函数文件夹【hexo-&gt;plugins-&gt;helper】打开list_archives.js文件（不要问怎么找到的，因为我花了很长时间一个一个翻的）</p>
+</blockquote>
+</li>
+<li>有源码后，自己想干啥都可。</li>
+</ul>
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="recent-list-item">
+            <p class="recent-post">Hexo主题3-archive的渲染</p>
+            <time datetime="2017-06-14T10:44:35.000Z">
+                2017-06-14
+            </time>
+            <div class="recent-postContent">
+                <ul>
+<li>写好了博客，为了以防万一，可以先浏览一下本地生成文件【hexo -g】。</li>
+<li>在我写好后，我发现关于archive文件夹下的问题。</li>
+<li><blockquote>
+<p>archive会有三个等级。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>一级：年份归档页；</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>二级：月份归档页；</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>三级：精确到天的归档页；</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>可是自己的博客里，根本就没有用到这么多的页面。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>不用说，一定是渲染时出的问题，找到渲染archive文件的模块【hexo-generator-archive】，里面有每个页面渲染的执行代码，注释掉自己不要的，之后就不会再生成那些没有用到的页面了。</p>
+</blockquote>
+</li>
+<li>总的来说，没有什么做不到，就算hexo没有，可以自己做，自由度挺高的。</li>
+<li>但是自由有时候是个麻烦，hexo毕竟有自己的版本，每当更新的时候，就是头疼的时候，保不准哪里就报错了。</li>
+<li>为了解决这个问题，自己修改过的地方最好保存一下，或者使用其他的方法，不要碰hexo的源码。</li>
+</ul>
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="recent-list-item">
+            <p class="recent-post">Hexo主题3-博客的生成</p>
+            <time datetime="2017-06-14T09:59:15.000Z">
+                2017-06-14
+            </time>
+            <div class="recent-postContent">
+                <ul>
+<li>hexo博客渲染靠的是node，当你自己编写主题遇到问题，可以从hexo源码修改得到自己想要的。</li>
+<li>hexo博客并不是动态的，本地渲染好静态文件，然后将静态文件托管到github仓库。所以如何显示的决定权在，本地的hexo文件里。</li>
+<li>比如自己想生成一个单独的页面，像archive.ejs渲染的归档页。</li>
+<li><blockquote>
+<p>1.最简单的方法，在github仓库里手动添加。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>2.修改hexo：</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>node中<strong>模块和配置文件</strong>很重要。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>hexo里的package.json，引用了目前所有的渲染模块。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>向其中添加一个模块（比如about模块），然后查看其他引用的模块【照葫芦画瓢】。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>在主题中添加对应的模板。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>多折腾，不懂的最终都会懂的，区别只不过是时间上的长短。</li>
+</ul>
+
+            </div>
+        </li>
+        
+        
+    </ul>
+    
+</div>
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/six6.js"></script>
+
+
+
+</body>
+</html>

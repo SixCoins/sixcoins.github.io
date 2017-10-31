@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Hexo主题2-主题的基本结构 [ SixCoins ]</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/six6.css">
+    
+    
+</head>
+<body>
+<div class="back-img back-img-filter"></div>
+<article class="post">
+  <a class="button-home" href="/"></a>
+  <p class="post-title">Hexo主题2-主题的基本结构</p>
+  <div class="post-content">
+    <ul>
+<li>首先讲一下，用yo生成的主题基本文件：</li>
+<li><blockquote>
+<p>_config.yml 用于配置网站基本信息；</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>layout文件夹 存放的是模板文件；</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>source文件夹 存放css,js,图片等资源;</p>
+</blockquote>
+</li>
+<li>layout文件下的模板【博客如何渲染】.ejs为例</li>
+<li><blockquote>
+<p>archive.ejs文件</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>主要有两个模块:if判断是否为归档页，决定渲染归档页，还是列表（分类，标签，归档的总和）。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>category.ejs、tag.ejs文件</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>分类页和便签页的渲染。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>post.ejs、page.ejs文件</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>文章详情页和页面详情页，内容相同，用于渲染文章页。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>partials文件夹</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>常用的组件，如pagination.ejs【分页控件：在很多的地方都有用到】，或者像recent-posts.ejs【放在页面中的小组件】。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>layout.ejs</strong>文件</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>博客主体结构，渲染时替换其中的<strong>body变量</strong>。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<p>index.ejs文件</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>默认主页，第一个替换body变量的文件。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>当觉得很绕的时候，将博客本地运行，用浏览器看源码，就能知道页面用的是什么文件渲染【总体就是其他文件替换body变量】。</li>
+</ul>
+
+  </div>
+  
+<nav class="pagination2">
+    
+    <a class="prev" href="/2017/06/14/Hexo主题1-生成基础文件/">
+        上一篇: <span>Hexo主题1-生成基础文件</span>
+    </a>
+    
+    
+    <a class="next" href="/2017/06/14/Hexo主题3-blog的渲染/">
+        下一篇: <span>Hexo主题3-博客的生成</span>
+    </a>
+    
+</nav>
+
+</article>
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/six6.js"></script>
+
+
+
+</body>
+</html>

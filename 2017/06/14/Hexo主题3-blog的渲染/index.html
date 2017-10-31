@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Hexo主题3-博客的生成 [ SixCoins ]</title>
+    
+    <!-- stylesheets list from config.yml -->
+    
+    <link rel="stylesheet" href="/css/six6.css">
+    
+    
+</head>
+<body>
+<div class="back-img back-img-filter"></div>
+<article class="post">
+  <a class="button-home" href="/"></a>
+  <p class="post-title">Hexo主题3-博客的生成</p>
+  <div class="post-content">
+    <ul>
+<li>hexo博客渲染靠的是node，当你自己编写主题遇到问题，可以从hexo源码修改得到自己想要的。</li>
+<li>hexo博客并不是动态的，本地渲染好静态文件，然后将静态文件托管到github仓库。所以如何显示的决定权在，本地的hexo文件里。</li>
+<li>比如自己想生成一个单独的页面，像archive.ejs渲染的归档页。</li>
+<li><blockquote>
+<p>1.最简单的方法，在github仓库里手动添加。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>2.修改hexo：</p>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>node中<strong>模块和配置文件</strong>很重要。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>hexo里的package.json，引用了目前所有的渲染模块。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>向其中添加一个模块（比如about模块），然后查看其他引用的模块【照葫芦画瓢】。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<p>在主题中添加对应的模板。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>多折腾，不懂的最终都会懂的，区别只不过是时间上的长短。</li>
+</ul>
+
+  </div>
+  
+<nav class="pagination2">
+    
+    <a class="prev" href="/2017/06/14/Hexo主题2-主题的基本结构/">
+        上一篇: <span>Hexo主题2-主题的基本结构</span>
+    </a>
+    
+    
+    <a class="next" href="/2017/06/14/Hexo主题4-archive的渲染/">
+        下一篇: <span>Hexo主题3-archive的渲染</span>
+    </a>
+    
+</nav>
+
+</article>
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+
+<script src="/js/six6.js"></script>
+
+
+
+</body>
+</html>
